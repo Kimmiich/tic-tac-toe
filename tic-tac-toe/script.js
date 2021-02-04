@@ -26,7 +26,7 @@ board.addEventListener('click', function (event) {
       playertag.innerHTML = 'Player O turn';
       playerX.push(event.target.id);
     } else {
-      document.getElementById(event.target.id).innerHTML = `<span>O</span>`
+      document.getElementById(event.target.id).innerHTML = `<span>O</span>`;
       playertag.innerHTML = 'Player X turn';
       playerO.push(event.target.id);
     }
@@ -37,13 +37,15 @@ board.addEventListener('click', function (event) {
 
 
 const checkWinner = () => {
+  console.log('check winner')
   if (playerX.length > 2) {
     winningCond.forEach(condition => { 
       if (playerX.includes(condition[0].toString()) && playerX.includes(condition[1].toString()) && playerX.includes(condition[2].toString())) {
         return playertag.innerHTML = 'Player X wins!'
       } else if (playerO.includes(condition[0].toString()) && playerO.includes(condition[1].toString()) && playerO.includes(condition[2].toString())) {
-        return playertag.innerHTML =  'Player O wins!'
-      } else if (!playerX.includes(condition[0].toString()) && !playerX.includes(condition[1].toString()) && !playerX.includes(condition[2].toString()) && playerX.length === 5) {
+        return playertag.innerHTML = 'Player O wins!'
+      } else if (playerX.length === 5 && (!playerX.includes(condition[0].toString()) || !playerX.includes(condition[1].toString()) || !playerX.includes(condition[2].toString()))) {
+        console.log('its a tie')
         return playertag.innerHTML = "It's a tie, restart the game!"
       }
     })
