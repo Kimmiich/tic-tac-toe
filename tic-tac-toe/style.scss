@@ -1,0 +1,52 @@
+$text-font: 'Montserrat', sans-serif;
+
+body {
+    font-family: $text-font;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    .board {
+        background: rgb(101, 207, 158);
+        display: flex;
+        flex-flow: row wrap;
+        width: 340px;
+        height: 340px;
+        justify-content: center;
+        align-content: center;
+        .cell {
+            display: flex;
+            justify-content: center;
+        
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background: rgb(131, 237, 188);
+            cursor: pointer;
+            span {
+                font-size: 5em;
+                font-weight: bold;
+            }
+        }    
+        
+    }
+
+    .status {
+        font-size: 1.6em;
+    }
+    .btnRestart {
+        font-size: 1.2em;
+        font-family: $text-font;
+        padding: 10px 15px;
+        cursor: pointer;
+        background-color: rgb(255, 192, 203) ;
+        border-radius: 5px;
+    }
+    .btnRestart:hover {
+        background-color: rgb(235, 172, 183);
+    }
+}
